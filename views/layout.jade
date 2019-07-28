@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Peony Literary Agency
+    block head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="/stylesheets/layout.css")
+  body
+    script(src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    nav.navbar.navbar-expand-sm
+      .container
+        ul.nav.navbar-nav#navbar
+          li.nav-item
+            a.nav-link(onclick='social()' href='/#') Social
+          li.nav-item
+            a.nav-link(onclick='choose_page("Authors")' href='/#') Authors
+          li.nav-item
+            a.nav-link(onclick='choose_page("About")' href='/#') About
+        ul.nav.navbar-nav
+          li.nav-item
+            a.nav-link(onclick='choose_page("Work")' href='/#') Work
+          li.nav-item
+            a.nav-link(href='http://www.peonyrights.com/') Rights 
+          li.nav-item
+            a.nav-link(onclick='choose_page("Contact")' href='/#') Contact
+
+    block content
