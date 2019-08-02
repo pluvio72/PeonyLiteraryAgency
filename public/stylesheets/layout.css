@@ -81,24 +81,39 @@ nav a {
 	pointer-events: none;
 }
 
+@media only screen and (max-width: 1080px){
+	nav a{
+		padding: 0px;
+		margin: 0px;
+		font-size: 1.6rem!important;
+		margin-top: 1rem;
+	}
+
+	.container{
+		padding: 0px;
+	}
+}
+
 .navbar a:hover{
     color: rgba(53, 53, 53, 0.63);
 }
 
 .navbar a:hover::before,
 .navbar a:focus::before,
-.navbar a:active::before {
-	opacity: 1;
-	-webkit-transform: translateY(-2px);
-	-moz-transform: translateY(-2px);
-	transform: translateY(-2px);
+.navbar a:active::before,
+.active::before {
+	opacity: 1!important;
+	-webkit-transform: translateY(-2px)!important;
+	-moz-transform: translateY(-2px)!important;
+	transform: translateY(-2px)!important;
 }
 
 .navbar a:hover::after,
 .navbar a:focus::after,
-.navbar a:active::after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
+.navbar a:active::after,
+.active::after {
+	opacity: 1!important;
+	-webkit-transform: translateY(0px)!important;
+	-moz-transform: translateY(0px)!important;
+	transform: translateY(0px)!important;
 }

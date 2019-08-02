@@ -4,6 +4,7 @@ var pageData = document.getElementById('page-data').innerHTML;
 var current_page = pageData != '' ? pageData : 'About';
 document.getElementById('scrolldowna').href = '#'+current_page;
 
+//set autoscroll to div when clicking from author page back to main page
 var scroll = document.getElementById('scrollbool').innerHTML;
 if(scroll == 'true'){
     $('html, body').animate({
@@ -11,8 +12,14 @@ if(scroll == 'true'){
     }, 50);
 }
 
-// make the tabs under navbar work properly
+//setup set bar under nav link and only show currently chosen div
+for(var i = 0; i < nav_links.length; i++){
+    if(nav_links[i].innerHTML == current_page){
+        nav_links[i].classList.add('active');
+    }
+}
 
+//make only current page visible
 for(var i = 0; i < pages.length; i++){
     if(pages[i].id != current_page){
         pages[i].style.display = 'none';
@@ -20,25 +27,26 @@ for(var i = 0; i < pages.length; i++){
     else pages[i].style.display = '';
 }
 
+//functions for buttons
 function social(){
+    var dark = document.getElementById('darken');
     document.getElementById('twitter').style.display = 'block';
-    document.getElementById('darken').style.opacity = '0.25';
-    document.getElementsByClassName('content')[0].addEventListener('click', function(e){
+    dark.style.opacity = '0.4';
+    dark.style.zIndex = '9';
+    dark.addEventListener('click', function(e){
         document.getElementById('twitter').style.display = 'none';
-        document.getElementById('darken').style.opacity = '0';
+        dark.style.opacity = '0';
+        dark.style.zIndex = '-10';
     });
 }
 
-function scrollup(){
-    $('html, body').animate({
-        scrollTop: $('#navbar').offset().top
-    }, 50);
+function changeImage(div){
+    div.getElementsByClassName('author-name-box')[0].style.backgroundColor = 'rgba(200,200,200,0.66)';
+    div.getElementsByClassName('author-name')[0].style.opacity = '1';
 }
-
-function scrolldown(){
-    $('html, body').animat({
-        scrollTop: $('#'+current_page).offset().top
-    }, 50);
+function changeImageBack(div){
+    div.getElementsByClassName('author-name-box')[0].style.backgroundColor = 'rgba(200,200,200,0)';
+    div.getElementsByClassName('author-name')[0].style.opacity = '0';
 }
 
 function choose_page(page_name){
@@ -48,41 +56,40 @@ function choose_page(page_name){
     document.getElementById(page_name).style.display = ''; 
     document.getElementById('scrolldowna').href = '#'+page_name;
     current_page = page_name;
-    $('html, body').animate({
-        scrollTop: $("#"+page_name).offset().top
-    }, 50);
-    return true;
-}
+    zenscroll.to(document.getElementById(page_name));
 
-for(var i = 0; i < nav_links.length; i++){
-    if(nav_links[i].innerHTML == "About"){
-        nav_links[i].focus();
+    for(var i = 0; i < nav_links.length; i++){
+        if(nav_links[i].innerHTML == page_name){
+            nav_links[i].classList.add("active");
+        }
+        else nav_links[i].classList.remove("active");
     }
 }
 
-window.twttr = (function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-    if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
+//twitter sidebar
+//window.twttr = (function(d, s, id) {
+//var js, fjs = d.getElementsByTagName(s)[0],
+//    t = window.twttr || {};
+//    if (d.getElementById(id)) return t;
+//        js = d.createElement(s);
+//        js.id = id;
+//        js.src = "https://platform.twitter.com/widgets.js";
+//        fjs.parentNode.insertBefore(js, fjs);
+//
+//        t._e = [];
+//        t.ready = function(f) {
+ //       t._e.push(f);
+//    };
+//
+//    return t;
+//}(document, "script", "twitter-wjs"));
 
-        t._e = [];
-        t.ready = function(f) {
-        t._e.push(f);
-    };
+//twttr.widgets.createTweet(
+//    '100',
+//    document.getElementById('container'),
+//    {
+//        theme: 'dark'
+//    }
+//);
 
-    return t;
-}(document, "script", "twitter-wjs"));
-
-twttr.widgets.createTweet(
-    '100',
-    document.getElementById('container'),
-    {
-        theme: 'dark'
-    }
-);
-
-document.getElementsByClassName('timeline-Viewport')[0].style.height = '100%';
+//document.getElementsByClassName('timeline-Viewport')[0].style.height = '100%!important';

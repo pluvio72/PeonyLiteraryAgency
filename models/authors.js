@@ -9,6 +9,8 @@ var schema = new Schema({
     imageUrl1: { type: String, required: false },
     imageUrl2: { type: String, required: false },
     authorUrl: { type: String, required: false },
+    authorImage: { type: String, required: true },
+    authorImageBW: { type: String, required: true },
     description: { type: String, required: true }
 });
 

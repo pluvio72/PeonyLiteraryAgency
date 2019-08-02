@@ -7,13 +7,14 @@ block content
   .background    
   #darken
   .twitter-div#twitter
-    a.twitter-timeline(data-lang='en', data-chrome='noheader nofooter', data-width='100%', data-height='868', href='https://twitter.com/MarysiaPeony') 
+    a(data-height="100%" class="twitter-timeline" href="https://twitter.com/MarysiaPeony?ref_src=twsrc%5Etfw")
+      script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
   .content.text-center
     .main-div
       .title-div
         h1.title Peony Literary Agency
       #scroll
-        a#scrolldowna(onclick='scrolldown()' href='#')
+        a#scrolldowna(href='#')
           span
     .pages#About
       #about-us-div
@@ -23,7 +24,7 @@ block content
         p.about-us-text We represent writers of Fiction, Non Fiction and Graphic Novels but not Childrens' Books. We sell UK and US rights and work with established sub agents to sell into some foreign markets.
       .scrollup-div
         .scrollup.mt-5
-          a(onclick='scrollup()' href='#')
+          a(href='#')
             span
     .pages#Work
       #work-div
@@ -49,8 +50,8 @@ block content
             p.lead.text-left.work-text.work-examples - Reading and assessment for the Korean Literature Institute
             p.lead.text-left.work-text.work-examples - Organisation of publishing workshops for the National Arts Council, Singapore
       .scrollup-div
-        .scrollup.mt-5.mb-5
-          a(onclick='scrollup()' href='#')
+        .scrollup.extra-top-bottom
+          a(href='#')
             span
     .pages#Contact
       #contact-div
@@ -66,53 +67,34 @@ block content
             p.lead cecily@peonyliteraryagency.com
       .scrollup-div
         .scrollup
-          a(onclick='scrollup()' href='#')
+          a(href='#')
             span
     .pages#Authors
       #authors-div
         h1.page-title.mt-5#authors-an Authors
         #authors-subdiv
-          a(href='/authors/1')
-            .author-box#auth1
-          a(href='/authors/2')
-            .author-box#auth2
-          a(href='/authors/3')
-            .author-box#auth3
-          a(href='/authors/4')
-            .author-box#auth4
-          a(href='/authors/5')  
-            .author-box#auth5
-          a(href='/authors/6')
-            .author-box#auth6
-          a(href='/authors/7')
-            .author-box#auth7
-          a(href='/authors/8')
-            .author-box#auth8
-          a(href='/authors/9')
-            .author-box#auth9
-          a(href='/authors/10')
-            .author-box#auth10
-          a(href='/authors/11')
-            .author-box#auth11
-          a(href='/authors/12')
-            .author-box#auth12
-          a(href='/authors/13')  
-            .author-box#auth13
-          a(href='/authors/14')
-            .author-box#auth14
-          a(href='/authors/15')
-            .author-box#auth15
+          each author in authors
+            a(href='/authors/#{author.number}')
+              .author-box(
+                style='background-image: url("#{author.image}");'
+                onmouseover='changeImage(this)'
+                onmouseout='changeImageBack(this)')
+                  .author-name-box
+                    p.lead.author-name #{author.name}
       .scrollup-div
-        .scrollup.mb-5.mt-5
+        .scrollup.extra-top-bottom
           a(href='#navbar')
             span
       p#page-data(style='display: none;')= page
       p#scrollbool(style='display: none;')= scroll
 
       ///// META TAGS
-      //
-      ///
-      ////
-      ///
-  
+      // look for new images bg or make more red
+      //fix going back with links/anchors
+      //shirley image too large compress it
+      //fix anchor allignment when scrolling down for some links
+      //add more contrast to b&w background
+  script.
+    window.noZensmooth = true;
+  script(src="/javascripts/zenscroll.js")
   script(src='/javascripts/index.js')

@@ -19,6 +19,7 @@
 .details{
     place-self: center;
     margin-bottom: 0px;
+    max-height: 120%;
 }
 
 #description-div{

@@ -5,7 +5,31 @@ var model = require('../models/authors');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { page: 'About', scroll: false });
+  var list = [];
+  model.find({}, (err, results) =>{
+    for(var i = 0;i < results.length; i++){
+      var cur = {};
+      cur.image = results[i].authorImage;
+      cur.number = results[i].number;
+      cur.name = results[i].name;
+      list.push(cur);
+    }
+    //sort alphabetically by author name, number != alphabetical order
+    //sort alphabetically by author name, number != alphabetical order
+    var final = [];
+    var sorted = [];
+    for(var i = 0; i < list.length; i++) { sorted.push(list[i]['name']) }
+    sorted = sorted.sort();
+    for(var x = 0; x < list.length; x++){
+      for(var y = 0; y < list.length; y++){
+        if(sorted[x] == list[y]['name']){ 
+          final.push(list[y]); 
+          continue; 
+        }
+      }
+    }
+    res.render('index', { page: 'About', scroll: false, authors: final });
+  });
 });
 
 router.get('/authors/:number', (req, res) =>{
@@ -24,7 +48,30 @@ router.get('/authors/:number', (req, res) =>{
 });
 
 router.get('/:page', (req, res) => {
-  res.render('index', { page: req.params.page, scroll: true });
+  var list = [];
+  model.find({}, (err, results) => {
+    for(var i = 0;i < results.length; i++){
+      var cur = {};
+      cur.image = results[i].authorImage;
+      cur.number = results[i].number;
+      cur.name = results[i].name;
+      list.push(cur);
+    }
+    //sort alphabetically by author name, number != alphabetical order
+    var final = [];
+    var sorted = [];
+    for(var i = 0; i < list.length; i++) { sorted.push(list[i]['name']) }
+    sorted = sorted.sort();
+    for(var x = 0; x < list.length; x++){
+      for(var y = 0; y < list.length; y++){
+        if(sorted[x] == list[y]['name']){ 
+          final.push(list[y]); 
+          continue; 
+        }
+      }
+    }
+    res.render('index', { page: req.params.page, scroll: true, authors: final });
+  })
 })
 
 module.exports = router;
