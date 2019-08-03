@@ -18,16 +18,92 @@ block content
           span
     .pages#About
       #about-us-div
-        h1.page-title#about-us About Us
-        p.about-us-text Peony Literary Agency is one of the most prolific multi-lingual literary agencies in Asia. A small but ambitious and client-centered business, we represent writers worldwide with particular focus on Asia, and especially China.
-        br
-        p.about-us-text We represent writers of Fiction, Non Fiction and Graphic Novels but not Childrens' Books. We sell UK and US rights and work with established sub agents to sell into some foreign markets.
+        h1.page-title#about-us.mt-5 About Us
+        .about-div
+          //- var bold = "<b>Founded in 2009 by Marysia Juszczakiewicz </b>"
+          p.about-us-text.lead Founded in 2009 by Marysia Juszczakiewicz, Peony Literary Agency is one of the most prolific multi-lingual literary agencies in Asia. A small but ambitious and client-centered business, we represent writers of Fiction and Non Fiction worldwide with particular focus on Asia, and especially China. Our clients write about the history of their continent, ancient and recent, and of their own personal experiences of its emergence as an industrial and economic powerhouse.
+          
+          hr
+        - var agent = '<span class="lead black ml-3"> [ <span class="font-weight-bold">AGENT</span> ] </span>'
+        - var co_agent = '<span class="lead black ml-3"> [ <span class="font-weight-bold"> CO-AGENT</span> ] </span>'
+        
+        #about-accordion.accordion.mt-5
+          .card
+            #author-rep.card-header
+              h2.mb-0
+                button.btn.btn-secondary(type='button', data-toggle='collapse', data-target='#author-rep-div', aria-expanded='true', aria-controls='author-rep-div') AUTHOR REPRESENTATION
+            #author-rep-div.collapse.show(aria-labelledby='author-rep', data-parent='#about-accordion')
+              .card-body
+                .team-member
+                  .team-member-details
+                    p.lead.text-left.red.font-weight-bold Marysia Juszczakiewicz !{agent}
+                    p.lead.text-left.about-us-text With extensive experience of publishing and agenting in both the UK and Asia and a degree in Chinese, Marysia Juszczakiewicz set up one of the first author representation agencies in Asia in 2007 called  Creative Work Limited . In 2010 she founded her own agency,  Peony Literary Agency . She was the first agents to represent the Nobel Prize winner  Mo Yan  and sold English language rights for his novel  Sandalwood Death and is one of few agents in the Asian field specializing in sales of copyright both  in and out of Asia  with a business specializing in author representation and subagenting.
+                  .team-member-image
+                    img.agent-image(src='/images/team/marysia.jpg')
+                br
+                .team-member
+                  .team-member-details
+                    p.lead.text-left.red.font-weight-bold Jo Lusby !{co_agent}
+                    p.lead.text-left.about-us-text Pixie B Ltd is a consultancy and agency that specialises in publishing, film, and the creative sector in China. The company was co-founded in 2017 by Jo Lusby, former CEO of Penguin Random House North Asia, and Michelle Lombard, former CEO of Pearson Education Southeast Asia. Pixie B represents companies, filmmakers, authors, and other creatives seeking to find partners and deals, as well as secures finance and funding for start-up companies and offers strategic and commercial advice to companies seeking improved quality and/or quantity of business in China. Pixie B is proud to co-agent with Peony Literary Agency.
+                  .team-member-image
+                    img.agent-image(src='/images/team/jo_lusby.jpg')
+          .card
+            #foreign-rights.card-header
+              button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#foreign-rights-div', aria-expanded='false', aria-controls='foreign-rights-div') FOREIGN RIGHTS
+            #foreign-rights-div.collapse(aria-labelledby='foreign-rights', data-parent='#about-accordion')
+              .card-body
+                p.lead.about-us-text We represent publishers, agent and writers in China and Taiwan for publishers. Our clients include amongst others John Murray, Headline, Nicholas Brealey, British Library via Edwards Fuglewicz Literary Agency and Macmilan in the UK to The Italian Agency, Planeta, Mauri Spagnol in Europe to University of Chicago, OR Books and Other Press in the US. We sell rights for adult Fiction and Non Fiction as well as Children’s books.
+                br
+                .team-member
+                  .team-member-details
+                    p.lead.text-left.red.font-weight-bold Tina Chou !{agent}
+                    p.lead.text-left.about-us-text Tina is Peony&#39;s representative in Shanghai. She previously worked as an editor at Eurasian Publishing Group in Taiwan, before moving to Beijing, then Shanghai to become a literary talent scout and agent. She has brought in numerous titles into China and Taiwan, including a high figure ten-book deal sale to a Chinese Publishing house. She has been trained and is certified for practice by the Copyright Protection Center of China as a government-recognized literary agent.
+                  .team-member-image
+                    img.agent-image(src='/images/team/tina.jpg')
+                br
+                .team-member
+                  .team-member-details
+                    p.lead.text-left.red.font-weight-bold Cecily Lien !{agent}
+                    p.lead.text-left.about-us-text Cecily is Peony&#39;s representative in Taiwan. She has previously freelanced for publishers in Taiwan and now works with Peony Literary Agency as a literary agent selling rights in China and Taiwan. She frequently negotiates five figure deals for clients and multi book contracts.
+                  .team-member-image
+                    img.agent-image(src='/images/team/cecily.jpg')
+          .card
+            #translation-work.card-header
+              h2.mb-0
+                button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#translation-work-div', aria-expanded='false', aria-controls='translation-work-div') TRANSLATION WORK
+            #translation-work-div.collapse(aria-labelledby='translation-work', data-parent='#about-accordion')
+              - var translation_link = "<a href='http://tenderleavestranslation.com/en/' class='red'>  Tender Leaves Translation </a>"
+              - var shelly = "<a href='https://shellybryant.com' class='red'>Shelly Bryant </a>"
+              .card-body
+                p.lead.about-us-text Peony Literary Agency represents !{translation_link}. Tender Leaves Translation, a collective of translators and editors led by poet and translator Shelly Bryant, focuses on literary translation between Chinese and English, writing, editing, and training of young translators. With offices in Shanghai and Singapore, the core services offered by Tender Leaves Translation include preparation of sample and synopsis packages of book-length works for submission to publishers, literary and academic translation from Chinese to English and English to Chinese, writing and editing services, specialised research on regional topics, and training of literary translators. The Tender Leaves team has translated, edited, and researched work for clients all around the world, including China, Singapore, the UK, the US, Australia, Thailand, Indonesia, Malaysia, South Africa, and Germany, and has trained numerous emerging literary translators.
+                br
+                p.lead.about-us-text !{shelly} divides her year between Shanghai and Singapore, working as a writer, poet, researcher, and translator. She has translated Sheng Keyi’s novels Northern Girls and Fields of White for Penguin Books, and Death Fugue for Giramondo Press, Chew Kok Chang’s short story collection Other Cities, Other Lives and You Jin’s A Life in Words, Mum is Where the Heart is, and In Time, Out of Place for Epigram Books, Fan Wen’s Land of Mercy for Rinchen Books, Li Xinfeng’s China in Africa for HSRC, and Li Na’s memoir, My Life, for Penguin Books. Her translations of Khoo Seok Wan’s poetry were featured in the exhibition A Life in Poems by the National Library Board in Singapore. Shelly’s translation of Sheng Keyi’s Northern Girls was long-listed for the Man Asian Literary Prize in 2012, and her translation of You Jin’s In Time, Out of Place was shortlisted for the Singapore Literature Prize in 2016. She was awarded a Distinguished Alumni award from Oklahoma Christian University in 2017.
       .scrollup-div
-        .scrollup.mt-5
+        .scrollup.extra-top-bottom
           a(href='#')
             span
     .pages#Work
       #work-div
+        h1.page-title.mt-5.mb-5#work-in Work
+        p.lead.font-weight-bold AUTHOR REPRESENTATION
+        ul.list-unstyled
+          br
+          li.lead.text-left.font-weight-bold.red How to submit your novel
+          ul
+            li.lead.text-left Please send in the first three chapters of your novel
+            li.lead.text-left Also send in a clear and detailed synopsis of the complete story
+            li.lead.text-left And send in a little about yourself as the writer
+        ul.list-unstyled
+          br
+          li.lead.text-left.font-weight-bold.red How to submit non fiction
+          li.lead.text-left We would aim to place your non fiction book with a publisher by sending out a proposal. A proposal should include the following:
+          ul
+            li.lead.text-left What the book is about and why it needs to be published, what makes it compelling and unique
+            li.lead.text-left Who you are and why you are the ideal person to write this book, here you can include special marketing and promotional opportunities
+            li.lead.text-left A summary of the market and audience for this book including similar already published books
+            li.lead.text-left A chapter of sample text to show your writing tone and style
+            li.lead.text-left An outline of chapters
+      //#work-div
         h1.page-title.mt-5.mb-5#work-in Work
         p.lead.text-left - Author, illustrator and photographer representation
           p.lead.text-left.work-text - Our clients write about the history of their continent, ancient and recent, and of their own personal experience of its emergence as an industrial and economic-power house.
@@ -39,7 +115,7 @@ block content
           p.lead.text-left.work-text.work-examples - sourcing and negotiation of columns and journalistic pieces 
           p.lead.text-left.work-text.work-examples - negotiation of speaker fees 
           p.lead.text-left.work-text.work-examples - advice and help with on-line presence including social networks, author blogs and websites.
-        br 
+        br
         p.lead.text-left - Rights representation of publishers and agents in Asia.
           - var link = "<a href='http://www.peonyrights.com/plus/list.php?tid=74'>Rights </a>"
           p.lead.text-left.work-text - For information on recent sales please visit our !{link}
@@ -56,16 +132,26 @@ block content
     .pages#Contact
       #contact-div
         h1.page-title#contact-us Contact Us
-        p.lead.text-left.float-left.font-weight-bold EMAIL:
-          a(href='mailto:marysia@peonyliteraryagency.com')
-            p.lead marysia@peonyliteraryagency.com
-        p.lead.text-left.float-left.font-weight-bold EMAIL:
-          a(href='mailto:tina@peonyliteraryagency.com')
-            p.lead tina@peonyliteraryagency.com
-        p.lead.text-left.float-left.font-weight-bold EMAIL:
-          a(href='mailto:cecily@peonyliteraryagency.com')
-            p.lead cecily@peonyliteraryagency.com
-      .scrollup-div
+        .email-div
+          p.lead.font-weight-bold AUTHOR REPRESENTATION
+            .email-parent
+              a(href='mailto:marysia@peonyliteraryagency.com') 
+                p.lead.email marysia@peonyliteraryagency.com
+              a(href='mailto:jo@pixieb.com')
+                p.lead.email jo@pixieb.com
+        .email-div
+          p.lead.font-weight-bold REPRESENTATION OF CHINESE/TAIWANESE RIGHTS
+            .email-parent
+              a(href='mailto:tina@peonyliteraryagency.com')
+                p.lead.email tina@peonyliteraryagency.com
+              a(href='mailto:cecily@peonyliteraryagency.com')
+                p.lead.email cecily@peonyliteraryagency.com
+        br
+        p.lead.font-weight-bold TRANSLATION WORK
+          .email-parent
+            a(href='mailto:Marysia@peonyliteraryagency.com')
+              p.lead.email marysia@peonyliteraryagency.com
+      .scrollup-div.mt-5
         .scrollup
           a(href='#')
             span
@@ -94,6 +180,9 @@ block content
       //shirley image too large compress it
       //fix anchor allignment when scrolling down for some links
       //add more contrast to b&w background
+      //manga / cartoon peony
+      //or flower gif
+      //make spotify playlist profiles from the new edgy photo website i found
   script.
     window.noZensmooth = true;
   script(src="/javascripts/zenscroll.js")
