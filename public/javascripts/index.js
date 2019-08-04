@@ -4,12 +4,14 @@ var pageData = document.getElementById('page-data').innerHTML;
 var current_page = pageData != '' ? pageData : 'About';
 document.getElementById('scrolldowna').href = '#'+current_page;
 
+//make scroll offset 0 insteaf of 9 pixels up which is the default
+zenscroll.setup(null, 0);
+
 //set autoscroll to div when clicking from author page back to main page
 var scroll = document.getElementById('scrollbool').innerHTML;
 if(scroll == 'true'){
-    $('html, body').animate({
-        scrollTop: $("#"+current_page).offset().top
-    }, 50);
+    console.log(document.getElementById(current_page).getBoundingClientRect().top);
+    zenscroll.toY(document.documentElement.clientHeight);
 }
 
 //setup set bar under nav link and only show currently chosen div
