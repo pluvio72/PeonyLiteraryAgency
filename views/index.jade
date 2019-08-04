@@ -14,7 +14,7 @@ block content
       .title-div
         h1.title Peony Literary Agency
       #scroll
-        a#scrolldowna(href='#')
+        a#scrolldowna(onclick='scrolldown()')
           span
     .pages#About
       #about-us-div
@@ -80,32 +80,66 @@ block content
                 p.lead.about-us-text !{shelly} divides her year between Shanghai and Singapore, working as a writer, poet, researcher, and translator. She has translated Sheng Keyi’s novels Northern Girls and Fields of White for Penguin Books, and Death Fugue for Giramondo Press, Chew Kok Chang’s short story collection Other Cities, Other Lives and You Jin’s A Life in Words, Mum is Where the Heart is, and In Time, Out of Place for Epigram Books, Fan Wen’s Land of Mercy for Rinchen Books, Li Xinfeng’s China in Africa for HSRC, and Li Na’s memoir, My Life, for Penguin Books. Her translations of Khoo Seok Wan’s poetry were featured in the exhibition A Life in Poems by the National Library Board in Singapore. Shelly’s translation of Sheng Keyi’s Northern Girls was long-listed for the Man Asian Literary Prize in 2012, and her translation of You Jin’s In Time, Out of Place was shortlisted for the Singapore Literature Prize in 2016. She was awarded a Distinguished Alumni award from Oklahoma Christian University in 2017.
       .scrollup-div
         .scrollup.extra-top-bottom
-          a(href='#')
+          a.scrollup-btn(onclick='scrollup()')
             span
     .pages#Work
       #work-div
         h1.page-title.mt-5.mb-5#work-in Work
-        p.lead.font-weight-bold AUTHOR REPRESENTATION
-        ul.list-unstyled
-          br
-          li.lead.text-left.font-weight-bold.red How to submit your novel
-          ul
-            li.lead.text-left Please send in the first three chapters of your novel
-            li.lead.text-left Also send in a clear and detailed synopsis of the complete story
-            li.lead.text-left And send in a little about yourself as the writer
-        ul.list-unstyled
-          br
-          li.lead.text-left.font-weight-bold.red How to submit non fiction
-          li.lead.text-left We would aim to place your non fiction book with a publisher by sending out a proposal. A proposal should include the following:
-          ul
-            li.lead.text-left What the book is about and why it needs to be published, what makes it compelling and unique
-            li.lead.text-left Who you are and why you are the ideal person to write this book, here you can include special marketing and promotional opportunities
-            li.lead.text-left A summary of the market and audience for this book including similar already published books
-            li.lead.text-left A chapter of sample text to show your writing tone and style
-            li.lead.text-left An outline of chapters
+        p.lead.font-weight-bold.mt-3 AUTHOR REPRESENTATION
+        #work-accordion-1.accordion.mt-2
+          .card
+            #work-novel.card-header
+              h2.mb-0
+                button.btn.btn-secondary(type='button', data-toggle='collapse', data-target='#work-novel-div', aria-expanded='true', aria-controls='work-novel-div') SUBMIT NOVEL
+            #work-novel-div.collapse.show(aria-labelledby='work-novel', data-parent='#work-accordion-1')
+              .card-body
+                ul.list-unstyled
+                  br
+                  li.lead.font-weight-bold.red How to submit your novel
+                  ul
+                    li.lead.text-left.smaller Please send in the first three chapters of your novel
+                    li.lead.text-left.smaller Also send in a clear and detailed synopsis of the complete story
+                    li.lead.text-left.smaller And send in a little about yourself as the writer
+          .card
+            #work-non-fiction.card-header
+              button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#work-non-fiction-div', aria-expanded='false', aria-controls='work-non-fiction-div') SUBMIT NON-FICTION
+            #work-non-fiction-div.collapse(aria-labelledby='work-non-fiction', data-parent='#work-accordion-1')
+              .card-body
+                ul.list-unstyled
+                  br
+                  li.lead.font-weight-bold.red How to submit non fiction
+                  li.lead We would aim to place your non fiction book with a publisher by sending out a proposal. A proposal should include the following:
+                  br
+                  ul
+                    li.lead.text-left.smaller What the book is about and why it needs to be published, what makes it compelling and unique
+                    li.lead.text-left.smaller Who you are and why you are the ideal person to write this book, here you can include special marketing and promotional opportunities
+                    li.lead.text-left.smaller A summary of the market and audience for this book including similar already published books
+                    li.lead.text-left.smaller A chapter of sample text to show your writing tone and style
+                    li.lead.text-left.smaller An outline of chapters
+        p.lead.font-weight-bold.mt-5 REPRESENTATION FOR CHINESE/TAIWANESE RIGHTS
+        p.lead.text-left We represent adult Fiction and Non Fiction, and Childrens Books. Pls email us with the following details:
+        #work-accordion-2.accordion.mt-2
+          .card
+            #work-submit.card-header
+              h2.mb-0
+                button.btn.btn-secondary(type='button', data-toggle='collapse', data-target='#work-submit-div', aria-expanded='true', aria-controls='work-submit-div') SUBMIT
+            #work-submit-div.collapse.show(aria-labelledby='work-submit', data-parent='#work-accordion-2')
+              .card-body
+                ul.list-unstyled
+                  br
+                  li.lead.font-weight-bold.text-left For Publishers/Agents
+                  ul
+                    li.lead.text-left.smaller Rights Catalogue
+                ul.list-unstyled
+                  br
+                  li.lead.font-weight-bold.text-left For Writers
+                  ul  
+                    li.lead.text-left.smaller A synopsis of the title/titles you would like us to represent
+                    li.lead.text-left.smaller Details of you the writer, and previous published works
+
       .scrollup-div
         .scrollup.extra-top-bottom
-          a(href='#')
+          a.scrollup-btn(onclick='scrollup()')
             span
     .pages#Contact
       #contact-div
@@ -131,7 +165,7 @@ block content
               p.lead.email marysia@peonyliteraryagency.com
       .scrollup-div.mt-5
         .scrollup
-          a(href='#')
+          a.scrollup-btn(onclick='scrollup()')
             span
     .pages#Authors
       #authors-div
@@ -147,7 +181,7 @@ block content
                     p.lead.author-name #{author.name}
       .scrollup-div
         .scrollup.extra-top-bottom
-          a(href='#navbar')
+          a.scrollup-btn(onclick='scrollup()')
             span
       p#page-data(style='display: none;')= page
       p#scrollbool(style='display: none;')= scroll
