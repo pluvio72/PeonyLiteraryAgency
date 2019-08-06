@@ -1,3 +1,4 @@
+.red{ color: rgb(179, 41, 17); }
 .main-container{
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 4fr 1fr;
@@ -60,3 +61,88 @@
         opacity: 0.3;
     }
 }
+
+.scrollup-div{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    z-index: 2;
+    width: 100%;
+    height: 80%;
+  }
+  .scrollup a span {
+    position: absolute;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    margin-left: -23px;
+    border: 1px solid rgb(27, 27, 27);
+    border-radius: 100%;
+    box-sizing: border-box;
+  }
+  .scrollup a span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -6px;
+    border-left: 1px solid rgb(27, 27, 27);
+    border-bottom: 1px solid rgb(27, 27, 27);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    box-sizing: border-box;
+  }
+  .scrollup a span::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    content: '';
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 0 0 0 rgba(255,255,255,.1);
+    border-radius: 100%;
+    opacity: 0;
+    -webkit-animation: sdb03 3s infinite;
+    animation: sdb03 3s infinite;
+    box-sizing: border-box;
+  }
+  .scrollup-btn:hover{ cursor: pointer; }
+  .scrollup{
+    height: 100%;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  @-webkit-keyframes sdb03 {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      box-shadow: 0 0 0 60px rgba(71, 71, 71, 0.1);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes sdb03 {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      box-shadow: 0 0 0 60px rgba(71, 71, 71, 0.1);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

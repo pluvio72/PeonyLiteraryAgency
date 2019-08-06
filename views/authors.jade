@@ -1,11 +1,18 @@
 doctype html
 html
   head
-    title Peony Literary Agency
+    link(rel='icon' href='/images/peony.ico' type='image/x-icon')
+    link(rel='shortcut icon' href='/images/peony.ico' type='image/x-icon')
+    title PLA | #{name}
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
     link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet")
     link(rel="stylesheet" href="/stylesheets/layout.css")
     link(rel="stylesheet" href="/stylesheets/authors.css")
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalabel=no')
+    meta(name='description' content='Asian based literary agency selling authors in translation and in english 帮作家卖翻译以及英文版权的亚洲文学代理公司')
+    meta(name='keywords' content='Peony Literary Agency, Peony, Literary, Agency, Chinese authors literature translation, Chinese, authors, literature, translation, Su Tong, Mo Yan, Chan Koonchung, Yan Geling, Wang Ruoxing, Shao Wei, Annie Baobei, Han Han, Jade Chen, Julie O\'Yang, 牡丹花版权代理公司, 牡丹花, 版权, 代理, 中国作家文学翻译, 中国, 作家, 文学, 翻译, 苏童, 莫言, 陈冠中, 严歌苓, 王若星, 邵薇, 安妮宝贝, 韩寒, 陈玉慧, 无根')
+    meta(name='author' content='PoisenMJ')
   body
     script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
@@ -47,3 +54,11 @@ html
                 img.details(src=imagePath2)
         #description-div
             p.lead !{description}
+        .scrollup-div
+          .scrollup
+            a.scrollup-btn(onclick='goback()')
+              span
+      script.
+        function goback(){
+          history.back();
+        }

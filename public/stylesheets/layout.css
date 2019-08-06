@@ -11,6 +11,7 @@ html{
     width: 115%;
     position: relative;
 }
+#social:hover{ cursor: pointer; }
 
 .nav-link{
     color: #272727;

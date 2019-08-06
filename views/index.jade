@@ -2,6 +2,23 @@ extends layout.jade
 
 block head
   link(rel="stylesheet" href="/stylesheets/index.css")
+  link(rel='icon' href='/images/peony.ico' type='image/x-icon')
+  link(rel='shortcut icon' href='/images/peony.ico' type='image/x-icon')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalabel=no')
+  meta(name='description' content='Asian based literary agency selling authors in translation and in english 帮作家卖翻译以及英文版权的亚洲文学代理公司')
+  meta(name='keywords' content='Peony Literary Agency, Peony, Literary, Agency, Chinese authors literature translation, Chinese, authors, literature, translation, Su Tong, Mo Yan, Chan Koonchung, Yan Geling, Wang Ruoxing, Shao Wei, Annie Baobei, Han Han, Jade Chen, Julie O\'Yang, 牡丹花版权代理公司, 牡丹花, 版权, 代理, 中国作家文学翻译, 中国, 作家, 文学, 翻译, 苏童, 莫言, 陈冠中, 严歌苓, 王若星, 邵薇, 安妮宝贝, 韩寒, 陈玉慧, 无根')
+  meta(name='author' content='PoisenMJ')
+  //get this from google
+  meta(name='google-site-verification' content='')
+  if page == 'About'
+    title PLA | About
+  if page == 'Authors'
+    title PLA | Authors
+  if page == 'Submit'
+    title PLA | Submit
+  if page == 'Contact'
+    title PLA | Contact
 
 block content
   .background    
@@ -143,7 +160,7 @@ block content
             span
     .pages#Contact
       #contact-div
-        h1.page-title#contact-us Contact Us
+        h1.page-title#contact-us.extra-top Contact Us
         .email-div
           p.lead.font-weight-bold AUTHOR REPRESENTATION
             .email-parent
@@ -163,7 +180,7 @@ block content
           .email-parent
             a(href='mailto:Marysia@peonyliteraryagency.com')
               p.lead.email marysia@peonyliteraryagency.com
-      .scrollup-div.mt-5
+      .scrollup-div.extra-top-bottom
         .scrollup
           a.scrollup-btn(onclick='scrollup()')
             span
@@ -192,6 +209,9 @@ block content
       //or flower gif
       //make spotify playlist profiles from the new edgy photo website i found
       //auto scroll not working when going back from authors
+      //update FOFF website make author poisenmj
+      //make background opacity with rgba instead of opacity for background
+      // change navbar when it gets smaller so space is even between all
   script.
     window.noZensmooth = true;
   script(src="/javascripts/zenscroll.js")

@@ -3,10 +3,6 @@ var pages = document.getElementsByClassName('pages');
 var pageData = document.getElementById('page-data').innerHTML;
 var current_page = pageData != '' ? pageData : 'About';
 
-window.onbeforeunload = function(evt){
-    console.log("Are you sure?");
-}
-
 //make scroll offset 0 insteaf of 9 pixels up which is the default
 zenscroll.setup(null, 0);
 

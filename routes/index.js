@@ -15,7 +15,6 @@ router.get('/', function(req, res, next) {
       list.push(cur);
     }
     //sort alphabetically by author name, number != alphabetical order
-    //sort alphabetically by author name, number != alphabetical order
     var final = [];
     var sorted = [];
     for(var i = 0; i < list.length; i++) { sorted.push(list[i]['name']) }

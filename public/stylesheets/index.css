@@ -102,6 +102,10 @@ b, .red{ color: rgb(179, 41, 17); }
   .pages{
     grid-template-columns: 1fr 16fr 1fr;
   }
+
+  .twitter-div{
+    width: 50%;
+  }
 }
 
 .page-title{
@@ -115,8 +119,8 @@ b, .red{ color: rgb(179, 41, 17); }
 }
 
 #about-us{
-  margin-left: 15rem;
-  margin-right: 15rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
 }
 
 #about-us-div{
@@ -242,6 +246,7 @@ b, .red{ color: rgb(179, 41, 17); }
   margin-top: 5rem!important;
   margin-bottom: 5rem!important;
 }
+.extra-top{ margin-top: 5rem!important; }
 
 #scroll a {
   padding-top: 60px;
