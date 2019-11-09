@@ -69,8 +69,9 @@ router.get('/:page', (req, res) => {
         }
       }
     }
+    console.log('Page: ' + req.params.page);
     res.render('index', { page: req.params.page, scroll: true, authors: final });
-  })
-})
+  });
+});
 
 module.exports = router;

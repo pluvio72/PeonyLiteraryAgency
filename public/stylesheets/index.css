@@ -1,3 +1,13 @@
+@font-face{ font-family: 'Ostrich-bold'; 
+  src: url('../fonts/ostrict-sans-bold.eot'); 
+  src: url('../fonts/ostrich-sans-bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ostrich-sans-bold.woff') format('woff'),
+       url('../fonts/ostrich-sans-bold.ttf') format('truetype'),
+       url('../fonts/ostrich-sans-bold.svg') format('svg');
+  font-weight: bold; 
+  font-style: normal;
+}
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -5,6 +15,17 @@ b, .red{ color: rgb(179, 41, 17); }
 .red:hover{ text-decoration: none; }
 .black { color: #212529; }
 .smaller{ font-size: 1.15rem!important; }
+
+#siteTitle{ 
+  font-family: 'Ostrich-bold' ;
+  color: rgb(179, 41, 17);
+  font-size: 7rem;
+  font-weight: 300;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+}
 
 .content{
   position: absolute;
@@ -14,12 +35,12 @@ b, .red{ color: rgb(179, 41, 17); }
 }
 
 .background{
-  background-image: url('/images/backgrounds/peony_background_bw_2.jpg');
+  background-image: url('/images/backgrounds/peony_background_bw.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover; 
   position: absolute;
-  opacity: 0.4;
+  opacity: 0.45;
   height: 100%;
   width: 100%;
   z-index: -2;
@@ -28,7 +49,7 @@ b, .red{ color: rgb(179, 41, 17); }
 }
 
 #darken{
-  background-color: rgb(0,0,0);
+  background-color: rgb(0, 0, 0);
   transition: opacity 0.25s ease;
   transition: background-color 0.25s ease;
   position: absolute;
@@ -44,15 +65,15 @@ b, .red{ color: rgb(179, 41, 17); }
 }
 
 .twitter-div{
-  overflow-y: scroll!important;
+  /*overflow-y: scroll!important;*/
   background-color: white;
   position: absolute;
   display: none;
   padding: 0px;
   height: 100%;
   z-index: 10;
-  width: 20%;
-  left: 0px;
+  width: 25%;
+  left: 0;
 }
 
 .main-div{
@@ -77,18 +98,6 @@ b, .red{ color: rgb(179, 41, 17); }
 }
 .scrollup-btn:hover{ cursor: pointer; }
 
-.title{
-  color: rgb(179, 41, 17);
-  font-size: 4.25rem;
-  font-weight: 300;
-  border-bottom: 4px solid #363636;
-  border-left: 4px solid #363636;
-  padding-bottom: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1rem;
-}
-
 .pages{
   opacity: 0.8;
   width: 100%;
@@ -99,13 +108,7 @@ b, .red{ color: rgb(179, 41, 17); }
 }
 
 @media only screen and (max-width: 1080px){
-  .pages{
-    grid-template-columns: 1fr 16fr 1fr;
-  }
-
-  .twitter-div{
-    width: 50%;
-  }
+  .pages{ grid-template-columns: 1fr 16fr 1fr; }
 }
 
 .page-title{

@@ -5,31 +5,23 @@ block head
   link(rel='icon' href='/images/peony.ico' type='image/x-icon')
   link(rel='shortcut icon' href='/images/peony.ico' type='image/x-icon')
   meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalabel=no')
   meta(name='description' content='Asian based literary agency selling authors in translation and in english 帮作家卖翻译以及英文版权的亚洲文学代理公司')
   meta(name='keywords' content='Peony Literary Agency, Peony, Literary, Agency, Chinese authors literature translation, Chinese, authors, literature, translation, Su Tong, Mo Yan, Chan Koonchung, Yan Geling, Wang Ruoxing, Shao Wei, Annie Baobei, Han Han, Jade Chen, Julie O\'Yang, 牡丹花版权代理公司, 牡丹花, 版权, 代理, 中国作家文学翻译, 中国, 作家, 文学, 翻译, 苏童, 莫言, 陈冠中, 严歌苓, 王若星, 邵薇, 安妮宝贝, 韩寒, 陈玉慧, 无根')
   meta(name='author' content='PoisenMJ')
   //get this from google
   meta(name='google-site-verification' content='')
-  if page == 'About'
-    title PLA | About
-  if page == 'Authors'
-    title PLA | Authors
-  if page == 'Submit'
-    title PLA | Submit
-  if page == 'Contact'
-    title PLA | Contact
+  title PLA | #{page}
 
 block content
   .background    
   #darken
   .twitter-div#twitter
-    a(data-height="100%" class="twitter-timeline" href="https://twitter.com/MarysiaPeony?ref_src=twsrc%5Etfw")
+    a(data-height="100%" data-width="100%" class="twitter-timeline" href="https://twitter.com/MarysiaPeony?ref_src=twsrc%5Etfw")
       script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
   .content.text-center
     .main-div
       .title-div
-        h1.title Peony Literary Agency
+        h1#siteTitle Peony Literary Agency
       #scroll
         a#scrolldowna(onclick='scrolldown()')
           span
@@ -37,18 +29,18 @@ block content
       #about-us-div
         h1.page-title#about-us.mt-5 About Us
         .about-div
-          //- var bold = "<b>Founded in 2009 by Marysia Juszczakiewicz </b>"
           p.about-us-text.lead Founded in 2009 by Marysia Juszczakiewicz, Peony Literary Agency is one of the most prolific multi-lingual literary agencies in Asia. A small but ambitious and client-centered business, we represent writers of Fiction and Non Fiction worldwide with particular focus on Asia, and especially China. Our clients write about the history of their continent, ancient and recent, and of their own personal experiences of its emergence as an industrial and economic powerhouse.
           
           hr
-        - var agent = '<span class="lead black ml-3"> [ <span class="font-weight-bold">AGENT</span> ] </span>'
-        - var co_agent = '<span class="lead black ml-3"> [ <span class="font-weight-bold"> CO-AGENT</span> ] </span>'
+        - var agent = '<span class="lead black ml-3"> ( <span class="font-weight-bold" style="font-size: 1rem;">AGENT</span> ) </span>'
+        - var co_agent = '<span class="lead black ml-3"> ( <span class="font-weight-bold" style="font-size: 1rem;"> CO-AGENT</span> ) </span>'
         
         #about-accordion.accordion.mt-5
           .card
             #author-rep.card-header
               h2.mb-0
                 button.btn.btn-secondary(type='button', data-toggle='collapse', data-target='#author-rep-div', aria-expanded='true', aria-controls='author-rep-div') AUTHOR REPRESENTATION
+                  i.fa.fa-mouse-pointer.ml-2
             #author-rep-div.collapse.show(aria-labelledby='author-rep', data-parent='#about-accordion')
               .card-body
                 .team-member
@@ -61,12 +53,13 @@ block content
                 .team-member
                   .team-member-details
                     p.lead.text-left.red.font-weight-bold Jo Lusby !{co_agent}
-                    p.lead.text-left.about-us-text Pixie B Ltd is a consultancy and agency that specialises in publishing, film, and the creative sector in China. The company was co-founded in 2017 by Jo Lusby, former CEO of Penguin Random House North Asia, and Michelle Lombard, former CEO of Pearson Education Southeast Asia. Pixie B represents companies, filmmakers, authors, and other creatives seeking to find partners and deals, as well as secures finance and funding for start-up companies and offers strategic and commercial advice to companies seeking improved quality and/or quantity of business in China. Pixie B is proud to co-agent with Peony Literary Agency.
+                    p.lead.text-left.about-us-text Pixie B Ltd is a consultancy and agency that specialises in publishing, film, and the creative sector in China. The company was co-founded in 2017 by Jo Lusby, former CEO of Penguin Random House North Asia, and Michelle Lombard, former CEO of Pearson Education Southeast Asia. Pixie B represents companies, filmmakers, authors, and other creatives seeking to find partners and deals, as well as secures finance and funding for start-up companies and offers strategic and commercial advice to companies seeking improved quality and/or quantity of business in China. Pixie B is proud to co-agent with Peony Literary Agency.  
                   .team-member-image
                     img.agent-image(src='/images/team/jo_lusby.jpg')
           .card
             #foreign-rights.card-header
               button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#foreign-rights-div', aria-expanded='false', aria-controls='foreign-rights-div') FOREIGN RIGHTS
+                i.fa.fa-mouse-pointer.ml-2
             #foreign-rights-div.collapse(aria-labelledby='foreign-rights', data-parent='#about-accordion')
               .card-body
                 p.lead.about-us-text We represent publishers, agent and writers in China and Taiwan for publishers. Our clients include amongst others John Murray, Headline, Nicholas Brealey, British Library via Edwards Fuglewicz Literary Agency and Macmilan in the UK to The Italian Agency, Planeta, Mauri Spagnol in Europe to University of Chicago, OR Books and Other Press in the US. We sell rights for adult Fiction and Non Fiction as well as Children’s books.
@@ -88,13 +81,15 @@ block content
             #translation-work.card-header
               h2.mb-0
                 button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#translation-work-div', aria-expanded='false', aria-controls='translation-work-div') TRANSLATION WORK
+                  i.fa.fa-mouse-pointer.ml-2
             #translation-work-div.collapse(aria-labelledby='translation-work', data-parent='#about-accordion')
               - var translation_link = "<a href='http://tenderleavestranslation.com/en/' class='red'>  Tender Leaves Translation </a>"
               - var shelly = "<a href='https://shellybryant.com' class='red'>Shelly Bryant </a>"
+              - var legends_book = "<i>Legends of the Condor Heroes</i>"
               .card-body
                 p.lead.about-us-text Peony Literary Agency represents !{translation_link}. Tender Leaves Translation, a collective of translators and editors led by poet and translator Shelly Bryant, focuses on literary translation between Chinese and English, writing, editing, and training of young translators. With offices in Shanghai and Singapore, the core services offered by Tender Leaves Translation include preparation of sample and synopsis packages of book-length works for submission to publishers, literary and academic translation from Chinese to English and English to Chinese, writing and editing services, specialised research on regional topics, and training of literary translators. The Tender Leaves team has translated, edited, and researched work for clients all around the world, including China, Singapore, the UK, the US, Australia, Thailand, Indonesia, Malaysia, South Africa, and Germany, and has trained numerous emerging literary translators.
                 br
-                p.lead.about-us-text !{shelly} divides her year between Shanghai and Singapore, working as a writer, poet, researcher, and translator. She has translated Sheng Keyi’s novels Northern Girls and Fields of White for Penguin Books, and Death Fugue for Giramondo Press, Chew Kok Chang’s short story collection Other Cities, Other Lives and You Jin’s A Life in Words, Mum is Where the Heart is, and In Time, Out of Place for Epigram Books, Fan Wen’s Land of Mercy for Rinchen Books, Li Xinfeng’s China in Africa for HSRC, and Li Na’s memoir, My Life, for Penguin Books. Her translations of Khoo Seok Wan’s poetry were featured in the exhibition A Life in Poems by the National Library Board in Singapore. Shelly’s translation of Sheng Keyi’s Northern Girls was long-listed for the Man Asian Literary Prize in 2012, and her translation of You Jin’s In Time, Out of Place was shortlisted for the Singapore Literature Prize in 2016. She was awarded a Distinguished Alumni award from Oklahoma Christian University in 2017.
+                p.lead.about-us-text !{shelly} divides her year between Shanghai and Singapore, working as a writer, poet, researcher, and translator. She has translated Sheng Keyi’s novels Northern Girls and Fields of White. Shelly is currently working on the translation of martial arts writer Jin Yong's Volume IV !{legends_book} with Quercus.
       .scrollup-div
         .scrollup.extra-top-bottom
           a.scrollup-btn(onclick='scrollup()')
@@ -108,6 +103,7 @@ block content
             #work-novel.card-header
               h2.mb-0
                 button.btn.btn-secondary(type='button', data-toggle='collapse', data-target='#work-novel-div', aria-expanded='true', aria-controls='work-novel-div') SUBMIT NOVEL
+                  i.fa.fa-mouse-pointer.ml-2
             #work-novel-div.collapse.show(aria-labelledby='work-novel', data-parent='#work-accordion-1')
               .card-body
                 ul.list-unstyled
@@ -120,6 +116,7 @@ block content
           .card
             #work-non-fiction.card-header
               button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#work-non-fiction-div', aria-expanded='false', aria-controls='work-non-fiction-div') SUBMIT NON-FICTION
+                i.fa.fa-mouse-pointer.ml-2
             #work-non-fiction-div.collapse(aria-labelledby='work-non-fiction', data-parent='#work-accordion-1')
               .card-body
                 ul.list-unstyled
@@ -133,6 +130,7 @@ block content
                     li.lead.text-left.smaller A summary of the market and audience for this book including similar already published books
                     li.lead.text-left.smaller A chapter of sample text to show your writing tone and style
                     li.lead.text-left.smaller An outline of chapters
+        hr.mt-5
         p.lead.font-weight-bold.mt-5 REPRESENTATION FOR CHINESE/TAIWANESE RIGHTS
         p.lead.text-left We represent adult Fiction and Non Fiction, and Childrens Books. Pls email us with the following details:
         #work-accordion-2.accordion.mt-2
@@ -140,6 +138,7 @@ block content
             #work-submit.card-header
               h2.mb-0
                 button.btn.btn-secondary(type='button', data-toggle='collapse', data-target='#work-submit-div', aria-expanded='true', aria-controls='work-submit-div') SUBMIT
+                  i.fa.fa-mouse-pointer.ml-2
             #work-submit-div.collapse.show(aria-labelledby='work-submit', data-parent='#work-accordion-2')
               .card-body
                 ul.list-unstyled
@@ -164,6 +163,7 @@ block content
         .email-div
           p.lead.font-weight-bold AUTHOR REPRESENTATION
             .email-parent
+              p.lead For those Authors shared between Peony and Pixie B Ltd
               a(href='mailto:marysia@peonyliteraryagency.com') 
                 p.lead.email marysia@peonyliteraryagency.com
               a(href='mailto:jo@pixieb.com')
@@ -178,6 +178,7 @@ block content
         br
         p.lead.font-weight-bold TRANSLATION WORK
           .email-parent
+            p.lead C/O Tender Leaves Translation and Shelly Bryant
             a(href='mailto:Marysia@peonyliteraryagency.com')
               p.lead.email marysia@peonyliteraryagency.com
       .scrollup-div.extra-top-bottom
@@ -200,14 +201,13 @@ block content
         .scrollup.extra-top-bottom
           a.scrollup-btn(onclick='scrollup()')
             span
-      p#page-data(style='display: none;')= page
-      p#scrollbool(style='display: none;')= scroll
+        p#page-data(style='display: none;')= page
+        p#scrollbool(style='display: none;')= scroll
 
       ///// META TAGS
       // look for new images bg or make more red
       //manga / cartoon peony
       //or flower gif
-      //make spotify playlist profiles from the new edgy photo website i found
       //auto scroll not working when going back from authors
       //update FOFF website make author poisenmj
       //make background opacity with rgba instead of opacity for background
@@ -215,4 +215,5 @@ block content
   script.
     window.noZensmooth = true;
   script(src="/javascripts/zenscroll.js")
+  script(src='/javascripts/jquery.smoothState.js' type='application/javascript')
   script(src='/javascripts/index.js')
