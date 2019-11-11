@@ -25,12 +25,12 @@ html{
 	margin-top: 1rem;
 	grid-template-rows: 1fr 1fr 1fr;
 	place-items: center;
-	padding: .8rem;
+	padding: .5rem;
 	z-index: 100;
 	cursor: pointer;
 	transition: 0.3s;
 }
-#navButton:hover { background-color: rgb(61, 61, 61); }
+#navButton:hover { background-color: rgb(41, 41, 41); }
 #navButton:hover .bar{ background-color: rgb(179, 41, 17); box-shadow: -4px 3px white; }
 .bar{ 
 	width : 80%;
@@ -189,6 +189,19 @@ nav a, #smallNavMenu a {
 
 	.container{
 		padding: 0px;
+	}
+
+	.nav-link{
+		font-size: 3rem!important;
+	}
+
+	#scroll a span, .scrollup a span{
+		width: 80px;
+		height: 80px;
+	}
+	#scroll a span::before, .scrollup a span::before{
+		width: 80px;
+		height: 80px;
 	}
 }
 

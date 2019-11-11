@@ -18,13 +18,16 @@ b, .red{ color: rgb(179, 41, 17); }
 
 #siteTitle{ 
   font-family: 'Ostrich-bold' ;
-  color: rgb(179, 41, 17);
   font-size: 7rem;
   font-weight: 300;
   padding-bottom: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 1rem;
+}
+
+@media only screen and (max-width: 1080px){
+  #siteTitle{ font-size: 10rem; }
 }
 
 .content{
