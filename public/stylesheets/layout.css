@@ -15,11 +15,10 @@ html{
 
 .nav-text{ color: rgb(41, 41, 41)!important; }
 
-#navButton{ 
+/* #navButton{ 
 	display: none; 
-	border: 5px solid rgb(43, 41, 41);
-	width: 22vw;
-	height: 9%;
+	width: 20vw;
+	height: 5%;
 	position: absolute;
 	margin-left: 1rem;
 	margin-top: 1rem;
@@ -30,13 +29,47 @@ html{
 	cursor: pointer;
 	transition: 0.3s;
 }
-#navButton:hover { background-color: rgb(41, 41, 41); }
-#navButton:hover .bar{ background-color: rgb(179, 41, 17); box-shadow: -4px 3px white; }
-.bar{ 
+#navButton:hover { background-color: rgb(68, 68, 68); }
+#navButton:hover .bar{ background-color: rgb(179, 41, 17); box-shadow: -4px 3px white; } */
+/* .bar{ 
 	width : 80%;
 	height: 33%;
 	background-color: black;
-	box-shadow: -4px 3px rgb(179, 41, 17);
+	box-shadow: -6px 6px rgb(179, 41, 17);
+} */
+#navButtonDiv{
+	display: none;
+	width: 100%;
+	place-items: center;
+	cursor: pointer;
+}
+#navButtonDiv span{
+	font-size: 3em;
+	margin-top: 1.2rem;
+}
+.arrow{
+	width: 1.25rem;
+	height: 3rem;
+	display: inline-block;
+	position: relative;
+	margin: 0 1rem;
+}
+.arrow span{
+	top: .5rem;
+	position: absolute;
+	width: .75rem;
+	height: .1rem;
+	background-color: #202020;
+	display: inline-block;
+	transition: all .2s ease;
+}
+.a1{
+	left: 0;
+	transform: rotate(45deg);
+}
+.a2{
+	right: 0;
+	transform: rotate(-45deg);
 }
 #smallNavMenu{
 	display: grid;
@@ -51,7 +84,7 @@ html{
 }
 #smallNavMenuClose{
 	position: absolute;
-	top: 0;
+	top: 30px;
 	right: 0;
 	margin-top: 1rem;
 	margin-right: 1rem;
@@ -109,7 +142,8 @@ html{
 .nav-link{
     color: #272727;
     font-size: 1rem; 
-    transition: 0.5s;
+	transition: 0.5s;
+	cursor: pointer;
 }
 
 .nav-link:hover{
@@ -186,23 +220,9 @@ nav a, #smallNavMenu a {
 		max-width: 100%!important;
 		margin: 0;
 	}
-
-	.container{
-		padding: 0px;
-	}
-
-	.nav-link{
-		font-size: 3rem!important;
-	}
-
-	#scroll a span, .scrollup a span{
-		width: 80px;
-		height: 80px;
-	}
-	#scroll a span::before, .scrollup a span::before{
-		width: 80px;
-		height: 80px;
-	}
+	.container{ padding: 0px; }
+	.nav-link{ font-size: 3rem!important; }
+	#navButtonDiv{ display: grid; }
 }
 
 .navbar a:hover, #smallNavMenu a:hover{
@@ -239,4 +259,4 @@ nav a, #smallNavMenu a {
 	.twitter-div{ width: 50%; }
 	nav{ display: none!important; }
 	#navButton{ display: grid; }
-  }
+}

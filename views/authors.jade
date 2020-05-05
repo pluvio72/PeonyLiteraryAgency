@@ -20,44 +20,105 @@ html
       .container
         ul.nav.navbar-nav#navbar
           li.nav-item
-            a.nav-link(onclick='' href='') Social
+            a.nav-link(onclick='social()') Social
           li.nav-item
             a.nav-link(onclick='' href='/Authors') Authors
           li.nav-item
             a.nav-link(onclick='' href='/About') About
         ul.nav.navbar-nav
           li.nav-item
-            a.nav-link(onclick='' href='/Work') Work
+            a.nav-link(onclick='' href='/Submit') Submit
           li.nav-item
             a.nav-link(href='http://www.peonyrights.com/') Chinese/Taiwanese Rights 
           li.nav-item
             a.nav-link(onclick='' href='/Contact') Contact
-    .main-container
-        #author-image-div
-            if imageUrl1
-                a(href='#{imageUrl1}')
-                    img.details(src=imagePath1)
-            else
-                img.details(src=imagePath1)
-            if authorUrl
-                .social.text-center
-                    a#authorA(href=authorUrl)
-                        p.display-3.details #{name}
-                        p.lead#click Click
-            else
-                p.display-3.details #{name}
-            if imagePath2 && imageUrl2
-                a(href='#{imageUrl2}')
-                    img.details(src=imagePath2)
-            else if imagePath2
-                img.details(src=imagePath2)
-        #description-div
-            p.lead !{description}
-        .scrollup-div
-          .scrollup
-            a.scrollup-btn(onclick='goback()')
-              span
-      script.
-        function goback(){
-          history.back();
-        }
+    #navButtonDiv
+      span.lead.red Menu
+      .arrow
+        span.a1
+        span.a2
+    #smallNavMenu
+      #smallNavMenuClose
+        #cbr
+        #cbl
+      ul.nav.mx-auto.flex-column
+        li.nav-item
+          a.nav-link.nav-text#social(onclick='socialSmall()') Social
+        li.nav-item
+          a.nav-link.nav-text( href='/Authors') Authors
+        li.nav-item
+          a.nav-link.nav-text( href='/About') About
+        li.nav-item
+          a.nav-link.nav-text( href='/Submit') Submit
+        li.nav-item
+          a.nav-link.nav-text( href='http://www.peonyrights.com/' ) Chinese/Taiwanese Rights
+        li.nav-item
+          a.nav-link.nav-text( href='/Contact') Contact
+
+    #darken
+    .twitter-div#twitter
+      a(data-height="100%" data-width="100%" class="twitter-timeline" href="https://twitter.com/MarysiaPeony?ref_src=twsrc%5Etfw")
+        script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
+    .content
+      #author-image-div
+        if imageUrl1
+          a(href='#{imageUrl1}')
+            img.details.book-cover(src=imagePath1)
+        else
+          img.details.book-cover(src=imagePath1)
+        if authorUrl
+          .social.text-center
+            a#authorA(href=authorUrl)
+              p.display-3.details #{name}
+              p.lead#click Click
+        else
+          p.display-3 #{name}
+        if imagePath2 && imageUrl2
+          a(href='#{imageUrl2}')
+            img.details.book-cover(src=imagePath2)
+        else if imagePath2
+          img.details.book-cover(src=imagePath2)
+      #description-div
+        p.lead !{description}
+      .scrollup-div
+        .scrollup
+          a.scrollup-btn(onclick='goback()')
+            span
+    script.
+      function goback(){
+        history.back();
+      }
+      function social(){
+        var dark = document.getElementById('darken');
+        document.getElementById('twitter').style.display = 'block';
+        console.log(document.getElementById('twitter').style.display);
+        dark.style.opacity = '0.4';
+        dark.style.zIndex = '9';
+        dark.addEventListener('click', function(e){
+          document.getElementById('twitter').style.display = 'none';
+          dark.style.opacity = '0';
+          dark.style.zIndex = '-10';
+        });
+      }
+      function socialSmall(){
+        $('#smallNavMenu').removeClass('smallNavMenuAnim');
+        $('#smallNavMenu').addClass('smallNavMenuAnimClose');
+        var dark = document.getElementById('darken');
+        document.getElementById('twitter').style.display = 'block';
+        dark.style.opacity = '0.4';
+        dark.style.zIndex = '9';
+        dark.addEventListener('click', function(e){
+          document.getElementById('twitter').style.display = 'none';
+          dark.style.opacity = '0';
+          dark.style.zIndex = '-10';
+        });
+      }
+      $('#navButtonDiv').click(function(){
+        $('#smallNavMenu').removeClass('smallNavMenuAnimClose')
+        $('#smallNavMenu').addClass('smallNavMenuAnim');
+      });
+      $('#smallNavMenuClose').click(function(){
+        $('#smallNavMenu').removeClass('smallNavMenuAnim');
+        $('#smallNavMenu').addClass('smallNavMenuAnimClose');
+      });
+

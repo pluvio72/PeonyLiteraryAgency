@@ -43,6 +43,20 @@ function social(){
     });
 }
 
+function socialSmall(){
+    $('#smallNavMenu').removeClass('smallNavMenuAnim');
+    $('#smallNavMenu').addClass('smallNavMenuAnimClose');
+    var dark = document.getElementById('darken');
+    document.getElementById('twitter').style.display = 'block';
+    dark.style.opacity = '0.4';
+    dark.style.zIndex = '9';
+    dark.addEventListener('click', function(e){
+        document.getElementById('twitter').style.display = 'none';
+        dark.style.opacity = '0';
+        dark.style.zIndex = '-10';
+    });
+}
+
 function changeImage(div){
     div.getElementsByClassName('author-name-box')[0].style.backgroundColor = 'rgba(200,200,200,0.66)';
     div.getElementsByClassName('author-name')[0].style.opacity = '1';
@@ -75,7 +89,7 @@ function choose_page(page_name){
     }
 }
 
-$('#navButton').click(function(){
+$('#navButtonDiv').click(function(){
     $('#smallNavMenu').removeClass('smallNavMenuAnimClose')
     $('#smallNavMenu').addClass('smallNavMenuAnim');
 });

@@ -13,15 +13,22 @@ block head
   title PLA | #{page}
 
 block content
-  .background    
+  .background 
   #darken
   .twitter-div#twitter
     a(data-height="100%" data-width="100%" class="twitter-timeline" href="https://twitter.com/MarysiaPeony?ref_src=twsrc%5Etfw")
       script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
+  .socials
+    div
+      img(src='/images/social/instagram.png' onclick='window.location.href="https://www.instagram.com/peony.literaryagency/"')
+    div 
+      img(src='/images/social/facebook.png' onclick='window.location.href="https://www.facebook.com/peonyliteraryagency"')
+    div
+      img(src='/images/social/twitter.png' onclick='window.location.href="https://twitter.com/MarysiaPeony"')
   .content.text-center
     .main-div
       .title-div
-        img(src='/images/peony_logo_sm.png')
+        img#siteLogo(src='/images/peony_logo_sm.png')
         h1#siteTitle.red Peony Literary Agency
       #scroll
         a#scrolldowna(onclick='scrolldown()')
@@ -30,11 +37,11 @@ block content
       #about-us-div
         h1.page-title#about-us.mt-5 About Us
         .about-div
-          p.about-us-text.lead Founded in 2009 by Marysia Juszczakiewicz, Peony Literary Agency is one of the most prolific multi-lingual literary agencies in Asia. A small but ambitious and client-centered business, we represent writers of Fiction and Non Fiction worldwide with particular focus on Asia, and especially China. Our clients write about the history of their continent, ancient and recent, and of their own personal experiences of its emergence as an industrial and economic powerhouse.
+          p.about-us-text.lead Founded in 2009 by Marysia Juszczakiewicz, Peony Literary Agency is one of the most prolific multi-lingual literary agencies in Asia. As a small but ambitious and client-centered business, we represent writers of fiction and nonfiction worldwide with particular focus on Asia, especially on China. Our clients write about the recent and ancient history of the continent, and of their own personal experiences of its emergence as an industrial and economic powerhouse, and imagine new narratives highlighting topical issues.
           
           hr
         - var agent = '<span class="lead black ml-3"> ( <span class="font-weight-bold" style="font-size: 1rem;">AGENT</span> ) </span>'
-        - var co_agent = '<span class="lead black ml-3"> ( <span class="font-weight-bold" style="font-size: 1rem;"> CO-AGENT</span> ) </span>'
+        //- - var co_agent = '<span class="lead black ml-3"> ( <span class="font-weight-bold" style="font-size: 1rem;"> CO-AGENT</span> ) </span>'
         
         #about-accordion.accordion.mt-5
           .card
@@ -46,38 +53,46 @@ block content
               .card-body
                 .team-member
                   .team-member-details
-                    p.lead.text-left.red.font-weight-bold Marysia Juszczakiewicz !{agent}
-                    p.lead.text-left.about-us-text With extensive experience of publishing and agenting in both the UK and Asia and a degree in Chinese, Marysia Juszczakiewicz set up one of the first author representation agencies in Asia in 2007 called  Creative Work Limited . In 2010 she founded her own agency,  Peony Literary Agency . She was the first agents to represent the Nobel Prize winner  Mo Yan  and sold English language rights for his novel  Sandalwood Death and is one of few agents in the Asian field specializing in sales of copyright both  in and out of Asia  with a business specializing in author representation and subagenting.
+                    p.lead.team-member-details-name.text-left.red.font-weight-bold Marysia Juszczakiewicz
+                    p.lead.text-left.about-us-text With extensive experience of publishing and agenting in both the UK and Asia and a degree in Chinese, Marysia Juszczakiewicz set up one of the first author representation agencies in Asia in 2007 called  Creative Work Limited . In 2010 she founded her own agency,  Peony Literary Agency . She was the first agent to represent the Nobel Prize winner  Mo Yan  and sold English language rights for his novel  Sandalwood Death and is one of few agents in the Asian field specializing in sales of copyright both  in and out of Asia  with a business specializing in author representation and subagenting.
                   .team-member-image
-                    img.agent-image(src='/images/team/marysia.jpg')
+                    img.agent-image.red-border(src='/images/team/marysia2.png')
                 br
                 .team-member
                   .team-member-details
-                    p.lead.text-left.red.font-weight-bold Jo Lusby !{co_agent}
+                    p.lead.team-member-details-name.text-left.red.font-weight-bold Jo Lusby
                     p.lead.text-left.about-us-text Pixie B Ltd is a consultancy and agency that specialises in publishing, film, and the creative sector in China. The company was co-founded in 2017 by Jo Lusby, former CEO of Penguin Random House North Asia, and Michelle Lombard, former CEO of Pearson Education Southeast Asia. Pixie B represents companies, filmmakers, authors, and other creatives seeking to find partners and deals, as well as secures finance and funding for start-up companies and offers strategic and commercial advice to companies seeking improved quality and/or quantity of business in China. Pixie B is proud to co-agent with Peony Literary Agency.  
                   .team-member-image
-                    img.agent-image(src='/images/team/jo_lusby.jpg')
+                    img.agent-image.red-border(src='/images/team/jo_lusby_square.jpg')
+                br
+                .team-member
+                  .team-member-details
+                    p.lead.team-member-details-name.text-left.red.font-weight-bold Anya Goncharova
+                    p.lead.text-left.about-us-text Anya Goncharova is an agent simultaneously working for Peony Literary Agency and Tender Leaves Translations. Born and raised in Beijing and now based in Shanghai, she works with international and local authors to connect them with publishers and readers all over the world. Prior to her agenting role, she was the editor heading the English-language list at Penguin Random House North Asia where she published a variety of fiction and non-fiction from the region. Anya works in English, Russian and Chinese.
+                  .team-member-image
+                    img.agent-image.red-border(src='/images/team/anya_square.jpg')          
           .card
             #foreign-rights.card-header
-              button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#foreign-rights-div', aria-expanded='false', aria-controls='foreign-rights-div') FOREIGN RIGHTS
-                i.fa.fa-mouse-pointer.ml-2
+              h2.mb-0
+                button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#foreign-rights-div', aria-expanded='false', aria-controls='foreign-rights-div') FOREIGN RIGHTS
+                  i.fa.fa-mouse-pointer.ml-2
             #foreign-rights-div.collapse(aria-labelledby='foreign-rights', data-parent='#about-accordion')
               .card-body
-                p.lead.about-us-text We represent publishers, agent and writers in China and Taiwan for publishers. Our clients include amongst others John Murray, Headline, Nicholas Brealey, British Library via Edwards Fuglewicz Literary Agency and Macmilan in the UK to The Italian Agency, Planeta, Mauri Spagnol in Europe to University of Chicago, OR Books and Other Press in the US. We sell rights for adult Fiction and Non Fiction as well as Children’s books.
+                p.lead.about-us-text We represent publishers, agents and writers for sales of Chinese and Taiwanese rights. Our clients include, amongst others, John Murray, Headline, Nicholas Brealey, British Library via Edwards Fuglewicz Literary Agency and Macmilan in the UK, as well as The Italian Agency, Planeta, Mauri Spagnol in Europe, and University of Chicago, OR Books and Other Press in the US. We sell rights for adult fiction and nonfiction as well as children’s books.
                 br
                 .team-member
                   .team-member-details
-                    p.lead.text-left.red.font-weight-bold Tina Chou !{agent}
+                    p.lead.team-member-details-name.text-left.red.font-weight-bold Tina Chou
                     p.lead.text-left.about-us-text Tina is Peony&#39;s representative in Shanghai. She previously worked as an editor at Eurasian Publishing Group in Taiwan, before moving to Beijing, then Shanghai to become a literary talent scout and agent. She has brought in numerous titles into China and Taiwan, including a high figure ten-book deal sale to a Chinese Publishing house. She has been trained and is certified for practice by the Copyright Protection Center of China as a government-recognized literary agent.
                   .team-member-image
-                    img.agent-image(src='/images/team/tina.jpg')
+                    img.agent-image.red-border(src='/images/team/tina_square.jpg')
                 br
                 .team-member
                   .team-member-details
-                    p.lead.text-left.red.font-weight-bold Cecily Lien !{agent}
+                    p.lead.text-left.team-member-details-name.red.font-weight-bold Cecily Lien
                     p.lead.text-left.about-us-text Cecily is Peony&#39;s representative in Taiwan. She has previously freelanced for publishers in Taiwan and now works with Peony Literary Agency as a literary agent selling rights in China and Taiwan. She frequently negotiates five figure deals for clients and multi book contracts.
                   .team-member-image
-                    img.agent-image(src='/images/team/cecily.jpg')
+                    img.agent-image.red-border(src='/images/team/cecily_square.jpg')
           .card
             #translation-work.card-header
               h2.mb-0
@@ -88,9 +103,14 @@ block content
               - var shelly = "<a href='https://shellybryant.com' class='red'>Shelly Bryant </a>"
               - var legends_book = "<i>Legends of the Condor Heroes</i>"
               .card-body
-                p.lead.about-us-text Peony Literary Agency represents !{translation_link}. Tender Leaves Translation, a collective of translators and editors led by poet and translator Shelly Bryant, focuses on literary translation between Chinese and English, writing, editing, and training of young translators. With offices in Shanghai and Singapore, the core services offered by Tender Leaves Translation include preparation of sample and synopsis packages of book-length works for submission to publishers, literary and academic translation from Chinese to English and English to Chinese, writing and editing services, specialised research on regional topics, and training of literary translators. The Tender Leaves team has translated, edited, and researched work for clients all around the world, including China, Singapore, the UK, the US, Australia, Thailand, Indonesia, Malaysia, South Africa, and Germany, and has trained numerous emerging literary translators.
+                p.lead.about-us-text Peony Literary Agency represents !{translation_link}, a collective of translators and editors led by poet and translator Shelly Bryant, focuses on literary translation between Chinese and English, writing, editing, and training of young translators. With offices in Shanghai and Singapore, the core services offered by Tender Leaves Translation include preparation of sample and synopsis packages of book-length works for submission to publishers, literary and academic translation from Chinese to English and English to Chinese, writing and editing services, specialised research on regional topics, and training of literary translators. The Tender Leaves team has translated, edited, and researched work for clients all around the world, including China, Singapore, the UK, the US, Australia, Thailand, Indonesia, Malaysia, South Africa, and Germany, and has trained numerous emerging literary translators.
+                img.mb-5.agent-image(src='/images/team/tender_leaves.png')
                 br
-                p.lead.about-us-text !{shelly} divides her year between Shanghai and Singapore, working as a writer, poet, researcher, and translator. She has translated Sheng Keyi’s novels Northern Girls and Fields of White. Shelly is currently working on the translation of martial arts writer Jin Yong's Volume IV !{legends_book} with Quercus.
+                .team-member
+                  .team-member-details
+                    p.lead.about-us-text !{shelly} divides her year between Shanghai and Singapore, working as a writer, poet, researcher, and translator. She has translated Sheng Keyi’s novels Northern Girls and Fields of White. Shelly is currently working on the translation of martial arts writer Jin Yong's Volume IV !{legends_book} with Quercus.
+                  .team-member-image
+                    img.agent-image.red-border(src='/images/team/shelly_square.jpg')
       .scrollup-div
         .scrollup.extra-top-bottom
           a.scrollup-btn(onclick='scrollup()')
@@ -98,7 +118,7 @@ block content
     .pages#Submit
       #submit-div
         h1.page-title.mt-5.mb-5#submit-title Submit
-        p.lead.font-weight-bold.mt-3 AUTHOR REPRESENTATION
+        h3.mb-3.lead.font-weight-bold.mt-3 AUTHOR REPRESENTATION
         #work-accordion-1.accordion.mt-2
           .card
             #work-novel.card-header
@@ -116,8 +136,9 @@ block content
                     li.lead.text-left.smaller And send in a little about yourself as the writer
           .card
             #work-non-fiction.card-header
-              button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#work-non-fiction-div', aria-expanded='false', aria-controls='work-non-fiction-div') SUBMIT NON-FICTION
-                i.fa.fa-mouse-pointer.ml-2
+              h2.mb-0
+                button.btn.btn-secondary.collapsed(type='button', data-toggle='collapse', data-target='#work-non-fiction-div', aria-expanded='false', aria-controls='work-non-fiction-div') SUBMIT NON-FICTION
+                  i.fa.fa-mouse-pointer.ml-2
             #work-non-fiction-div.collapse(aria-labelledby='work-non-fiction', data-parent='#work-accordion-1')
               .card-body
                 ul.list-unstyled
@@ -162,22 +183,25 @@ block content
       #contact-div
         h1.page-title#contact-us.extra-top Contact Us
         .email-div
-          p.lead.font-weight-bold AUTHOR REPRESENTATION
-            .email-parent
-              p.lead For those Authors shared between Peony and Pixie B Ltd
-              a(href='mailto:marysia@peonyliteraryagency.com') 
-                p.lead.email marysia@peonyliteraryagency.com
-              a(href='mailto:jo@pixieb.com')
-                p.lead.email jo@pixieb.com
+          h3.lead.font-weight-bold AUTHOR REPRESENTATION
+          .email-parent
+            p.lead For those Authors shared between Peony and Pixie B Ltd
+            a(href='mailto:marysia@peonyliteraryagency.com') 
+              p.lead.email marysia@peonyliteraryagency.com
+            a(href='mailto:jo@pixieb.com')
+              p.lead.email jo@pixieb.com
+            a(href='mailto:anya@peonyliteraryagency.com')
+              p.lead.email anya@peonyliteraryagency.com
         .email-div
-          p.lead.font-weight-bold REPRESENTATION OF CHINESE/TAIWANESE RIGHTS
-            .email-parent
-              a(href='mailto:tina@peonyliteraryagency.com')
-                p.lead.email tina@peonyliteraryagency.com
-              a(href='mailto:cecily@peonyliteraryagency.com')
-                p.lead.email cecily@peonyliteraryagency.com
+          h3.lead.font-weight-bold REPRESENTATION OF CHINESE/TAIWANESE RIGHTS
+          .email-parent
+            a(href='mailto:tina@peonyliteraryagency.com')
+              p.lead.email tina@peonyliteraryagency.com
+            a(href='mailto:cecily@peonyliteraryagency.com')
+              p.lead.email cecily@peonyliteraryagency.com
         br
-        p.lead.font-weight-bold TRANSLATION WORK
+        .email-div(style='border-bottom: none;')
+          h3.lead.font-weight-bold TRANSLATION WORK
           .email-parent
             p.lead C/O Tender Leaves Translation and Shelly Bryant
             a(href='mailto:Marysia@peonyliteraryagency.com')
@@ -210,9 +234,7 @@ block content
       //manga / cartoon peony
       //or flower gif
       //auto scroll not working when going back from authors
-      //update FOFF website make author poisenmj
       //make background opacity with rgba instead of opacity for background
-      // change navbar when it gets smaller so space is even between all
   script.
     window.noZensmooth = true;
   script(src="/javascripts/zenscroll.js")
